@@ -1,0 +1,12 @@
+name: optitype
+channels:
+- bioconda
+- defaults
+dependencies:
+- sambamba
+- bedtools 
+- optitype
+- pytz
+- glpk
+- pysam==0.15.2 #these versions of pysam an razers3 work with each other
+- razers3==3.5.3

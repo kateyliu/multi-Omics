@@ -1,0 +1,102 @@
+name: wes
+channels:
+- conda-forge
+- bioconda
+- biobuilds
+- aroth85
+- plotly
+- defaults
+dependencies:
+#GENERAL
+- snakemake>=5.30.1
+- samtools>=1.12
+- python==3.6.7 # later pythons dont support tenserflow 2.2.2 which is required by pvactools
+#- r>=3.4.1
+- numpy
+- scipy
+- slacker #for slack channel logging
+
+# other useful "general" tools that aren't needed by WES
+#- seqtk #useful tool for fastq manipulation but not needed by WES
+#- bedtools
+
+#align_*.snakefile
+- bwa>=0.7.15
+- sambamba>=0.6.6
+
+# BELOW are required by WES calling vcf
+- perl-bioperl #required by vcf2maf
+- perl-dbi
+- perl-vcftools-vcf=0.1.16=pl526_2 # vcf environment is not comapatable with this
+
+#cidc-vs
+- matplotlib<=3.0.3 # needed for multiqc
+- pybedtools
+
+#tumor purity
+- snp-pileup
+- r-pctgcdata
+- r-facets
+
+#tumor clonality
+- numba
+- click
+
+#report
+- r-pdftools
+- r-dplyr
+- r-gridExtra
+- r-optparse
+- r-ggpubr
+- genson
+- multiqc==1.10
+- plotly_express
+- bioconductor-maftools
+
+#hlahd
+- bowtie2
+
+#tcellextrect
+- r-tidyr
+- r-readr
+- r-zoo
+- r-seqinr
+#- r-gratia #NOTE: not in conda; manually do install.packages('gratia')
+
+#cnvkit
+- cnvkit
+
+# somatic and rna modules
+- bcftools
+
+#HANDLED SEPARATELY DUE TO SETUPTOOLS NEEDING TO BE INSTALLED FIRST
+# #pip installs
+# - pip:
+#   - setuptools<58
+# #  - tensorflow==2.2.2 # needed for for pvactools
+#   - pvactools==2.0.7
+#   - vcf-annotation-tools #neoantigen- rnaseq integration into pvacseq
+# #  - scipy==1.5.4 # not sure ablut extact version but scipy 1.7.3 could possibly break code
+#   # manual h5py== 3.1.0 since pvactools seems to override the conda install
+
+# #MANUALLY INSTALLED PACKAGES -- does not include all changes -- see wes_from_bash.md for instructions!
+# #neoantigen
+# setuptools==57.5.0 #pip
+# pvactools==2.0.7 #pip
+# gcc-multilib #sudo apt-get install
+# g++-multilib #sudo apt-get install
+
+
+# #hlahd
+# hlahd.1.4.0 #manual
+
+# #clonality
+# h5py==3.1.0
+
+# #tcellextrect (all r packages)
+# r-stringi
+# r-gratia
+# r-Rccp
+# tcellextrect # from github repo
+
+

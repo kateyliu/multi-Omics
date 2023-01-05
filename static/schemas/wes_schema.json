@@ -1,0 +1,654 @@
+{
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "type": "object",
+   "properties": {
+      "id": {
+         "type": "string"
+      },
+      "tumor": {
+         "type": "object",
+         "properties": {
+            "id": {
+               "type": "string"
+            },
+            "raw_file1": {
+               "type": "string"
+            },
+            "raw_file2": {
+               "type": "string"
+            },
+            "dedup_bam_file": {
+               "type": "string"
+            },
+            "alignment": {
+               "type": "object",
+               "properties": {
+                  "total_reads": {
+                     "type": "integer"
+                  },
+                  "mapped_reads": {
+                     "type": "integer"
+                  },
+                  "dedup_reads": {
+                     "type": "integer"
+                  },
+                  "gc_content": {
+                     "type": "array",
+                     "items": {
+                        "type": "integer"
+                     }
+                  },
+                  "quality_score": {
+                     "type": "array",
+                     "items": {
+                        "type": "integer"
+                     }
+                  }
+               },
+               "required": [
+                  "dedup_reads",
+                  "gc_content",
+                  "mapped_reads",
+                  "quality_score",
+                  "total_reads"
+               ]
+            },
+            "coverage": {
+               "type": "object",
+               "properties": {
+                  "total_reads": {
+                     "type": "integer"
+                  },
+                  "mean_depth": {
+                     "type": "number"
+                  },
+                  "q1_depth": {
+                     "type": "number"
+                  },
+                  "median_depth": {
+                     "type": "number"
+                  },
+                  "q3_depth": {
+                     "type": "number"
+                  },
+                  "percent_bases_gt_50": {
+                     "type": "number"
+                  }
+               },
+               "required": [
+                  "mean_depth",
+                  "median_depth",
+                  "percent_bases_gt_50",
+                  "q1_depth",
+                  "q3_depth",
+                  "total_reads"
+               ]
+            },
+            "hla": {
+               "type": "object",
+               "properties": {
+                  "A-1": {
+                     "type": "string"
+                  },
+                  "A-2": {
+                     "type": "string"
+                  },
+                  "B-1": {
+                     "type": "string"
+                  },
+                  "B-2": {
+                     "type": "string"
+                  },
+                  "C-1": {
+                     "type": "string"
+                  },
+                  "C-2": {
+                     "type": "string"
+                  },
+                  "DPB1-1": {
+                     "type": "string"
+                  },
+                  "DPB1-2": {
+                     "type": "string"
+                  },
+                  "DQB1-1": {
+                     "type": "string"
+                  },
+                  "DQB1-2": {
+                     "type": "string"
+                  },
+                  "DRB1-1": {
+                     "type": "string"
+                  },
+                  "DRB1-2": {
+                     "type": "string"
+                  }
+               },
+               "required": [
+                  "A-1",
+                  "A-2",
+                  "B-1",
+                  "B-2",
+                  "C-1",
+                  "C-2",
+                  "DPB1-1",
+                  "DPB1-2",
+                  "DQB1-1",
+                  "DQB1-2",
+                  "DRB1-1",
+                  "DRB1-2"
+               ]
+            },
+            "msi_sensor": {
+               "type": "number"
+            }
+         },
+         "required": [
+            "alignment",
+            "coverage",
+            "dedup_bam_file",
+            "hla",
+            "id",
+            "msi_sensor",
+            "raw_file1",
+            "raw_file2"
+         ]
+      },
+      "normal": {
+         "type": "object",
+         "properties": {
+            "id": {
+               "type": "string"
+            },
+            "raw_file1": {
+               "type": "string"
+            },
+            "raw_file2": {
+               "type": "string"
+            },
+            "dedup_bam_file": {
+               "type": "string"
+            },
+            "alignment": {
+               "type": "object",
+               "properties": {
+                  "total_reads": {
+                     "type": "integer"
+                  },
+                  "mapped_reads": {
+                     "type": "integer"
+                  },
+                  "dedup_reads": {
+                     "type": "integer"
+                  },
+                  "gc_content": {
+                     "type": "array",
+                     "items": {
+                        "type": "integer"
+                     }
+                  },
+                  "quality_score": {
+                     "type": "array",
+                     "items": {
+                        "type": "integer"
+                     }
+                  }
+               },
+               "required": [
+                  "dedup_reads",
+                  "gc_content",
+                  "mapped_reads",
+                  "quality_score",
+                  "total_reads"
+               ]
+            },
+            "coverage": {
+               "type": "object",
+               "properties": {
+                  "total_reads": {
+                     "type": "integer"
+                  },
+                  "mean_depth": {
+                     "type": "number"
+                  },
+                  "q1_depth": {
+                     "type": "number"
+                  },
+                  "median_depth": {
+                     "type": "number"
+                  },
+                  "q3_depth": {
+                     "type": "number"
+                  },
+                  "percent_bases_gt_50": {
+                     "type": "number"
+                  }
+               },
+               "required": [
+                  "mean_depth",
+                  "median_depth",
+                  "percent_bases_gt_50",
+                  "q1_depth",
+                  "q3_depth",
+                  "total_reads"
+               ]
+            },
+            "hla": {
+               "type": "object",
+               "properties": {
+                  "A-1": {
+                     "type": "string"
+                  },
+                  "A-2": {
+                     "type": "string"
+                  },
+                  "B-1": {
+                     "type": "string"
+                  },
+                  "B-2": {
+                     "type": "string"
+                  },
+                  "C-1": {
+                     "type": "string"
+                  },
+                  "C-2": {
+                     "type": "string"
+                  },
+                  "DPB1-1": {
+                     "type": "string"
+                  },
+                  "DPB1-2": {
+                     "type": "string"
+                  },
+                  "DQB1-1": {
+                     "type": "string"
+                  },
+                  "DQB1-2": {
+                     "type": "string"
+                  },
+                  "DRB1-1": {
+                     "type": "string"
+                  },
+                  "DRB1-2": {
+                     "type": "string"
+                  }
+               },
+               "required": [
+                  "A-1",
+                  "A-2",
+                  "B-1",
+                  "B-2",
+                  "C-1",
+                  "C-2",
+                  "DPB1-1",
+                  "DPB1-2",
+                  "DQB1-1",
+                  "DQB1-2",
+                  "DRB1-1",
+                  "DRB1-2"
+               ]
+            },
+            "msi_sensor": {
+               "type": "number"
+            }
+         },
+         "required": [
+            "alignment",
+            "coverage",
+            "dedup_bam_file",
+            "hla",
+            "id",
+            "msi_sensor",
+            "raw_file1",
+            "raw_file2"
+         ]
+      },
+      "copy_number": {
+         "type": "object",
+         "properties": {
+            "clonality": {
+               "type": "number"
+            },
+            "purity": {
+               "type": "number"
+            },
+            "ploidy": {
+               "type": "number"
+            },
+            "dipLogR": {
+               "type": "number"
+            },
+            "cnv_file": {
+               "type": "string"
+            },
+            "cnv_plot_file": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "clonality",
+            "cnv_file",
+            "cnv_plot_file",
+            "dipLogR",
+            "ploidy",
+            "purity"
+         ]
+      },
+      "somatic": {
+         "type": "object",
+         "properties": {
+            "filtered_vcf_file": {
+               "type": "string"
+            },
+            "filtered_maf_file": {
+               "type": "string"
+            },
+            "tmb": {
+               "type": "object",
+               "properties": {
+                  "tumor": {
+                     "type": "integer"
+                  },
+                  "normal": {
+                     "type": "integer"
+                  },
+                  "common": {
+                     "type": "integer"
+                  },
+                  "overlap": {
+                     "type": "number"
+                  }
+               },
+               "required": [
+                  "common",
+                  "normal",
+                  "overlap",
+                  "tumor"
+               ]
+            },
+            "mutation_summary": {
+               "type": "object",
+               "properties": {
+                  "total": {
+                     "type": "integer"
+                  },
+                  "snp": {
+                     "type": "integer"
+                  },
+                  "insertion": {
+                     "type": "integer"
+                  },
+                  "deletion": {
+                     "type": "integer"
+                  }
+               },
+               "required": [
+                  "deletion",
+                  "insertion",
+                  "snp",
+                  "total"
+               ]
+            },
+            "functional_summary": {
+               "type": "object",
+               "properties": {
+                  "missense": {
+                     "type": "object",
+                     "properties": {
+                        "total": {
+                           "type": "integer"
+                        },
+                        "snp": {
+                           "type": "integer"
+                        },
+                        "insertion": {
+                           "type": "integer"
+                        },
+                        "deletion": {
+                           "type": "integer"
+                        }
+                     },
+                     "required": [
+                        "deletion",
+                        "insertion",
+                        "snp",
+                        "total"
+                     ]
+                  },
+                  "nonsense": {
+                     "type": "object",
+                     "properties": {
+                        "total": {
+                           "type": "integer"
+                        },
+                        "snp": {
+                           "type": "integer"
+                        },
+                        "insertion": {
+                           "type": "integer"
+                        },
+                        "deletion": {
+                           "type": "integer"
+                        }
+                     },
+                     "required": [
+                        "deletion",
+                        "insertion",
+                        "snp",
+                        "total"
+                     ]
+                  },
+                  "silent": {
+                     "type": "object",
+                     "properties": {
+                        "total": {
+                           "type": "integer"
+                        },
+                        "snp": {
+                           "type": "integer"
+                        },
+                        "insertion": {
+                           "type": "integer"
+                        },
+                        "deletion": {
+                           "type": "integer"
+                        }
+                     },
+                     "required": [
+                        "deletion",
+                        "insertion",
+                        "snp",
+                        "total"
+                     ]
+                  }
+               },
+               "required": [
+                  "missense",
+                  "nonsense",
+                  "silent"
+               ]
+            },
+            "trinucleotide_matrix": {
+               "type": "array",
+               "items": {
+                  "type": "integer"
+               }
+            },
+            "transition_matrix": {
+               "type": "object",
+               "properties": {
+                  "A": {
+                     "type": "object",
+                     "properties": {
+                        "A": {
+                           "type": "integer"
+                        },
+                        "C": {
+                           "type": "integer"
+                        },
+                        "G": {
+                           "type": "integer"
+                        },
+                        "T": {
+                           "type": "integer"
+                        }
+                     },
+                     "required": [
+                        "A",
+                        "C",
+                        "G",
+                        "T"
+                     ]
+                  },
+                  "C": {
+                     "type": "object",
+                     "properties": {
+                        "A": {
+                           "type": "integer"
+                        },
+                        "C": {
+                           "type": "integer"
+                        },
+                        "G": {
+                           "type": "integer"
+                        },
+                        "T": {
+                           "type": "integer"
+                        }
+                     },
+                     "required": [
+                        "A",
+                        "C",
+                        "G",
+                        "T"
+                     ]
+                  },
+                  "G": {
+                     "type": "object",
+                     "properties": {
+                        "A": {
+                           "type": "integer"
+                        },
+                        "C": {
+                           "type": "integer"
+                        },
+                        "G": {
+                           "type": "integer"
+                        },
+                        "T": {
+                           "type": "integer"
+                        }
+                     },
+                     "required": [
+                        "A",
+                        "C",
+                        "G",
+                        "T"
+                     ]
+                  },
+                  "T": {
+                     "type": "object",
+                     "properties": {
+                        "A": {
+                           "type": "integer"
+                        },
+                        "C": {
+                           "type": "integer"
+                        },
+                        "G": {
+                           "type": "integer"
+                        },
+                        "T": {
+                           "type": "integer"
+                        }
+                     },
+                     "required": [
+                        "A",
+                        "C",
+                        "G",
+                        "T"
+                     ]
+                  }
+               },
+               "required": [
+                  "A",
+                  "C",
+                  "G",
+                  "T"
+               ]
+            }
+         },
+         "required": [
+            "filtered_maf_file",
+            "filtered_vcf_file",
+            "functional_summary",
+            "mutation_summary",
+            "tmb",
+            "transition_matrix",
+            "trinucleotide_matrix"
+         ]
+      },
+      "neoantigen": {
+         "type": "array",
+         "items": {
+            "type": "object",
+            "properties": {
+               "Gene": {
+                  "type": "string"
+               },
+               "EnsemblID": {
+                  "type": "string"
+               },
+               "HLA": {
+                  "type": "string"
+               },
+               "Peptide_Sequence": {
+                  "type": "string"
+               },
+               "Read_Depth": {
+                  "type": "number"
+               },
+               "DNA_VAF": {
+                  "type": "number"
+               },
+               "Method": {
+                  "type": "string"
+               },
+               "Score": {
+                  "type": "number"
+               },
+               "WT_Score": {
+                  "type": "number"
+               },
+               "Fold_Change": {
+                  "type": "number"
+               }
+            },
+            "required": [
+               "DNA_VAF",
+               "EnsemblID",
+               "Fold_Change",
+               "Gene",
+               "HLA",
+               "Method",
+               "Peptide_Sequence",
+               "Read_Depth",
+               "Score",
+               "WT_Score"
+            ]
+         }
+      },
+      "neoantigen_file": {
+         "type": "string"
+      }
+   },
+   "required": [
+      "copy_number",
+      "id",
+      "neoantigen",
+      "neoantigen_file",
+      "normal",
+      "somatic",
+      "tumor"
+   ]
+}

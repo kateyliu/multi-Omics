@@ -1,0 +1,16 @@
+name: somatic_vcftools
+channels:
+- bioconda
+- biobuilds
+- aroth85
+- conda-forge
+- defaults
+dependencies:
+#vcf processing
+- vcftools
+- vcf2maf>=1.6.16
+- ensembl-vep=91.3 #required by vcf2maf; tying it to vep.ver91_3
+- perl=5.22.0 #DANGEROUS! vep_91.3 ties us to perl 5.22.0!!!! 
+- perl-bioperl #required by vcf2maf
+- tabix
+- bcftools

@@ -1,0 +1,7 @@
+name: germline
+channels:
+- bioconda
+- defaults
+dependencies:
+- samtools
+- vcftools

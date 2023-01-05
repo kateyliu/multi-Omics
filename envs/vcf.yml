@@ -1,0 +1,18 @@
+name: vcf
+channels:
+- conda-forge
+- bioconda
+- biobuilds
+- aroth85
+- plotly
+- defaults
+
+dependencies:
+- vcftools=0.1.16=he860b03_3
+- vcf2maf=1.6.18=1 # NEEDED UNTIL WE REWRITE vfc2maf TO USE NEW COMMANDLINE OPTION
+- ensembl-vep=91.3 #required by vcf2maf; tying it to vep.ver91_3
+- perl=5.22.0 #DANGEROUS! vep_91.3 ties us to perl 5.22.0!!!!
+- perl-bioperl #required by vcf2maf
+- perl-dbi
+# DO NOT enable perl-vcftools-vcf=0.1.16=pl526_2
+#- perl-vcftools-vcf=0.1.16=pl526_2 # DOES NOT WORK!!! ADDED TO REPLACE MANUAL COMMAND

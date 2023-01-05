@@ -1,0 +1,67 @@
+#NOTE: you won't typically have to change the following two lines!
+metasheet: 'metasheet.csv'
+ref: "wes/ref.yaml"
+
+somatic_caller: tnscope
+
+#Path to sentieon binary
+sentieon_path: "/michorlab/jacobg/wes/sentieon/sentieon-genomics-202010.01/bin/"
+
+#Tell us what assembly to use (!! MUST be defined in chips/ref.yaml !!)
+assembly: hg38
+
+vcf2maf_bufferSize: 1000 #for standard8 #50000 for highmem-64
+
+# neoantigen module - Define whether to run class II results
+# This will trigger an additional HLA caller, xHLA to generate class II
+# HLA alleles.  Comment the following line to DISABLE it-
+neoantigen_run_classII: False
+
+# neoantigen module - Define which callers to use in a space-separated list
+# Callers avaliable:
+# 'MHCflurry', 'MHCnuggetsI', 'MHCnuggetsII', 'NNalign', 'NetMHC',
+# 'NetMHCIIpan', 'NetMHCcons', 'NetMHCpan', 'PickPocket', 'SMM',
+# 'SMMPMBEC', 'SMMalign'
+neoantigen_callers: "NetMHCpan"
+
+# neoantigen module - Define which epitope lengths to analyze in comma
+# 	     	      separated list for class1 and class2 respectively
+neoantigen_epitope_lengths_cls1: "8,9,10,11"
+neoantigen_epitope_lengths_cls2: "12,13,14,15,16,17,18"
+
+#effective_size: # of base-pairs covered in target regions
+effective_size: 30000000
+
+tumor_only: False
+
+# DEFINE the samples- each sample should have a name, e.g. SAMPLE1
+# and a path to the input file, e.g. data/sample1.fastq.gz
+# VALID INPUTS: fastq, fastq.gz, bam
+# NOTE: for PAIRED-END fastq/fastq.gz, give both pairs to the sample:
+# SAMPLE_1_PE:
+#   - data/sample1_pair1.fastq
+#   - data/sample1_pair2.fastq
+# WARNING: DO not mix Paired-END and Single-End samples!!!
+# ALSO: having the string "rep" or '.' in your sample name will throw an ERROR
+# '.' causes Rscripts chop off names; and it's used as replicate splitter
+samples:
+  Pt_4500:
+    - /michorlab/zhao_data/wxs/data/SRR7588441_1.fastq
+    - /michorlab/zhao_data/wxs/data/SRR7588441_2.fastq
+  Pt_3986_NL_AS:
+    - /michorlab/zhao_data/wxs/data/SRR7588440_1.fastq
+    - /michorlab/zhao_data/wxs/data/SRR7588440_2.fastq
+  Pt_4500_NL_AS:
+    - /michorlab/zhao_data/wxs/data/SRR7588439_1.fastq
+    - /michorlab/zhao_data/wxs/data/SRR7588439_2.fastq
+
+
+
+
+
+
+#The following are optional meta information that will be stored in the report
+#wes_run_info:
+#  wes_commit: c1d74f0
+#  wes_ref_snapshot: wes-human-ref-ver1-7
+#  wes_image: wes-ver3-01a

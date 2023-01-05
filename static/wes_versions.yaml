@@ -1,0 +1,21 @@
+#A file of the latest versions of different tools and reference files
+#This is used by the report, namely in wes_meta to support default values
+# it's easier to store here than in the code
+#than in code
+wes_commit: b278cd9 #NOTE: report_meta.py overrides this
+wes_ref_version: wes-human-ref-ver1-6
+wes_image: wes-ver2-25
+
+#NOTE: tool versions are very unlikely to change
+sentieon_version: sentieon-genomics-202010.01
+vep_version: 91.3
+facets_version: 0.5.14
+optitype_version: 1.3.2
+hlahd_version: 1.4.0
+pvactools_version: 2.0.2
+iedb_mhci_version: 3.1.1
+iedb_mhcii_version: 3.1.2
+vcftools_version: 0.1.16
+bcftools_version: 1.9
+snakemake_version: 5.30.1
+msisensor2_version: commit_e0798c7

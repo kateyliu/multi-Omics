@@ -1,0 +1,53 @@
+#REF.yaml - File to contain paths to static reference files that Chips requires
+#           for its analysis.
+# NOTE: these are already pre-filled for hg19 and mm9 (if you use the publicly
+#       available files found here: <link to chips static references)
+# NOTE: organized by assemblies
+# 
+# !VERY IMPORTANT: you can OVERRIDE any of these values in config.yaml!
+
+hg38:
+  bwa_index: /michorlab/aashna/multiomics/reference_files/hg38/bwa_gdc/hg38_p2_v22/hg38_p2_v22
+  genome_fasta: /michorlab/aashna/multiomics/reference_files/hg38/bwa_gdc/hg38_p2_v22/hg38_p2_v22.fa
+  vep_fasta: /michorlab/aashna/multiomics/reference_files/hg38/bwa_gdc/hg38_p2_v22/hg38_p2_v22.fa
+  dbsnp: /michorlab/aashna/multiomics/reference_files/hg38/snp/Homo_sapiens_assembly38.dbsnp138.vcf
+  Mills_indels: /michorlab/aashna/multiomics/reference_files/hg38/snp/Mills_and_1000G_gold_standard.indels.hg38.vcf.gz
+  G1000_indels: /michorlab/aashna/multiomics/reference_files/hg38/snp/1000G_phase1.snps.high_confidence.hg38.vcf.gz
+  CDS_Bed_input: /michorlab/aashna/multiomics/reference_files/hg38/gencode.v22.canonical.bed
+  vep_data: /michorlab/aashna/multiomics/reference_files/hg38/vep_gdc_v84
+  vep_plugins: /michorlab/aashna/multiomics/reference_files/hg38/vep/VEP_plugins
+ #vep_synonyms: /michorlab/aashna/multiomics/reference_files/hg38/vep_gdc_v84/homo_sapiens/84_GRCh38/chr_synonyms.txt
+  #vep_custom_enst: /michorlab/aashna/multiomics/reference_files/hg38/vep_gdc_v84/myc_isoform_overrides_uniprot
+  #vep_filter: /michorlab/aashna/multiomics/reference_files/hg38/vep_gdc_v84/ExAC_nonTCGA.r0.3.1.sites.vep.vcf.gz
+  vep_assembly: GRCh38
+
+  #Panel of normals
+  #PoNs: ./ref_files/hg38/pons/MDA_Broad_Miao_pad0
+  pons: ./ref_files/hg38/pons/lung_TCGA_cnv_pad0
+  pons_target: ./ref_files/hg38/pons/MDA_Broad_Miao.target.bed
+
+  pons_haplotyper: ./ref_files/hg38/pons/TNhaplotyper_PoN.vcf.gz
+  pons_cidc: ./ref_files/hg38/pons/cidc.pon.vcf.gz
+  gnomad: /michorlab/aashna/multiomics/reference_files/hg38/pons/af-only-gnomad.hg38.vcf.gz
+  
+  #Tumor purity
+  facets_vcftar: ./ref_files/hg38/snp/00-common_all.vcf.gz
+
+  #clonality
+  gc_file: ./ref_files/hg38/clonality/hg38.gc50Base.txt.gz
+
+  #neoantigen
+  neoantigen_iedb: /michorlab/aashna/multiomics/reference_files/hg38/iedb/
+
+  #copynumber
+  gistic2: ./ref_files/hg38/gistic2/hg38.UCSC.add_miR.160920.refgene.mat
+
+  #msisensor2
+  msisensor2: ./ref_files/hg38/msisensor2/models_hg38/
+
+  twist_regions: ./ref_files/hg38/target_beds/twist.broad.mdacc.mocha.liftover.hg38.sorted.merged.canonical.bed
+  
+  #HLA-HD:
+  hlahd_freq_data: /michorlab/aashna/multiomics/reference_files/hg38/hlahd.1.4.0/freq_data/
+  hlahd_split_file: /michorlab/aashna/multiomics/reference_files/hg38/hlahd.1.4.0/HLA_gene.split.3.32.0.txt
+  hlahd_dictionary: /michorlab/aashna/multiomics/reference_files/hg38/hlahd.1.4.0/dictionary/
